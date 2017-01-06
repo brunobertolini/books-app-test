@@ -10,10 +10,11 @@
     "build:rollup": "rollup -f iife -c -o tmp/bundle.es2015.js",
     "build:es5": "tsc --target es5 --allowJs tmp/bundle.es2015.js --out tmp/bundle.js",
     "build:minify": "uglifyjs tmp/bundle.js --screw-ie8 --compress --mangle --output build/bundle.js",
-    "build": "npm run build:tsc && npm run build:rollup && npm run build:es5 && npm run build:minify",
     "build:vendors": "uglifyjs node_modules/zone.js/dist/zone.js node_modules/reflect-metadata/Reflect.js node_modules/systemjs/dist/system.js --screw-ie8 --compress --mangle --output build/vendors.js",
+    "build": "npm run build:tsc && npm run build:rollup && npm run build:es5 && npm run build:minify && npm run build:vendors",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "onchange 'app/**/*.ts' -i -- npm run build_prod",
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "serve": "http-server . -p 8080"
   },
   "author": "Bruno Bertolini <dev@brunobertolini.com>",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@angular/compiler": "^2.4.1",
     "http-server": "^0.9.0",
+    "lite-server": "^2.2.2",
     "rollup": "^0.40.2",
     "rollup-plugin-node-resolve": "^2.0.0",
     "typescript": "^2.1.4",
