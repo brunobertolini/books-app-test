@@ -5,38 +5,38 @@
   "scripts": {
     "postinstall": "npm run typings",
     "typings": "typings install",
-    "build:clean": "rm -rf tmp && rm -rf build",
+    "build:clean": "rm -rf tmp && rm -rf build && mkdir build",
     "build:tsc": "tsc -p tsconfig.json",
     "build:rollup": "rollup -f iife -c -o tmp/bundle.es2015.js",
     "build:es5": "tsc --target es5 --allowJs tmp/bundle.es2015.js --out tmp/bundle.js",
     "build:minify": "uglifyjs tmp/bundle.js --screw-ie8 --compress --mangle --output build/bundle.js",
-    "build": "npm run build:clean && npm run build:tsc && npm run build:rollup && npm run build:es5 && npm run build:minify",
+    "build": "npm run build:tsc && npm run build:rollup && npm run build:es5 && npm run build:minify",
     "build:vendors": "uglifyjs node_modules/zone.js/dist/zone.js node_modules/reflect-metadata/Reflect.js node_modules/systemjs/dist/system.js --screw-ie8 --compress --mangle --output build/vendors.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "onchange 'app/**/*.ts' -i -- npm run build_prod",
-    "serve": "http-server . -p ${SERVER_PORT}"
+    "serve": "http-server . -p 8080"
   },
   "author": "Bruno Bertolini <dev@brunobertolini.com>",
   "license": "MIT",
   "devDependencies": {
-    "@angular/compiler": "^2.0.0-rc.3",
+    "@angular/compiler": "^2.4.1",
     "http-server": "^0.9.0",
-    "rollup": "^0.33.0",
-    "rollup-plugin-node-resolve": "^1.7.1",
-    "typescript": "^1.9.0-dev.20160625-1.0",
-    "typings": "^1.3.0",
+    "rollup": "^0.40.2",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "typescript": "^2.1.4",
+    "typings": "^2.1.0",
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
-    "@angular/common": "^2.0.0-rc.3",
-    "@angular/core": "^2.0.0-rc.3",
-    "@angular/platform-browser": "^2.0.0-rc.3",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.3",
-    "es6-shim": "^0.35.1",
-    "reflect-metadata": "^0.1.3",
-    "rxjs": "5.0.0-beta.6",
-    "rxjs-es": "5.0.0-beta.6",
-    "systemjs": "^0.19.31",
-    "zone.js": "^0.6.6"
+    "@angular/common": "^2.4.1",
+    "@angular/core": "^2.4.1",
+    "@angular/platform-browser": "^2.4.1",
+    "@angular/platform-browser-dynamic": "^2.4.1",
+    "es6-shim": "^0.35.2",
+    "reflect-metadata": "^0.1.9",
+    "rxjs": "^5.0.2",
+    "rxjs-es": "^5.0.0-beta.12",
+    "systemjs": "^0.19.41",
+    "zone.js": "^0.7.4"
   }
 }
