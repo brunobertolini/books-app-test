@@ -7,7 +7,7 @@ import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { AppComponent }      from './app.component';
 import { HttpService }       from './../providers/http';
 import { BooksDataService }  from './../components/books/data-service';
-import { BookCardComponent } from './../components/books/card';
+import { BookCardComponent } from './../components/book-card/card';
 import { SearchPage }        from './../pages/search/search';
 
 @NgModule({
