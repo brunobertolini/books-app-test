@@ -9,11 +9,12 @@
     "build:tsc": "tsc -p tsconfig.json",
     "build:rollup": "rollup -f iife -c -o tmp/bundle.es2015.js",
     "build:es5": "tsc --target es5 --allowJs tmp/bundle.es2015.js --out tmp/bundle.js",
+    "build:dev": "npm run build:tsc && npm run build:rollup && npm run build:es5",
     "build:minify": "uglifyjs tmp/bundle.js --screw-ie8 --compress --mangle --output build/bundle.js",
     "build:vendors": "uglifyjs node_modules/zone.js/dist/zone.js node_modules/reflect-metadata/Reflect.js node_modules/systemjs/dist/system.js --screw-ie8 --compress --mangle --output build/vendors.js",
-    "build": "npm run build:tsc && npm run build:rollup && npm run build:es5 && npm run build:minify && npm run build:vendors",
+    "build": "npm run build:clean && npm run build:dev && npm run build:minify && npm run build:vendors",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "onchange 'app/**/*.ts' -i -- npm run build_prod",
+    "watch": "onchange 'app/**/*.ts' -i -- npm run build:dev",
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "serve": "http-server . -p 8080"
   },
@@ -21,6 +22,8 @@
   "license": "MIT",
   "devDependencies": {
     "@angular/compiler": "^2.4.1",
+    "concurrently": "^3.1.0",
+    "core-js": "^2.4.1",
     "http-server": "^0.9.0",
     "lite-server": "^2.2.2",
     "rollup": "^0.40.2",
@@ -32,6 +35,7 @@
   "dependencies": {
     "@angular/common": "^2.4.1",
     "@angular/core": "^2.4.1",
+    "@angular/http": "^2.4.1",
     "@angular/platform-browser": "^2.4.1",
     "@angular/platform-browser-dynamic": "^2.4.1",
     "es6-shim": "^0.35.2",
