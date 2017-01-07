@@ -5,23 +5,28 @@ import { BooksDataService } from './../../components/books/data-service';
 
 @Component({
     selector: 'search',
-    templateUrl: 'src/pages/search/search.html'
+    templateUrl: 'src/pages/search/search.html',
+    styleUrls: ['src/pages/search/search.css']
 })
 export class SearchPage {
-    public books: Array<any> = [];
+    public result: any = {
+        totalItems: 0
+    };
 
     constructor(public dataservice: BooksDataService) {
     }
 
     exec(event) {
         if (!event.target.value || event.target.value.trim() === '') {
-            return this.books = [];
+            return this.result = {
+                totalItems: 0
+            };
         }
 
         this.dataservice
             .search(event.target.value)
-            .then((result) => {
-                this.books = result.items;
+            .then((response) => {
+                this.result = response;
             });
     }
 }

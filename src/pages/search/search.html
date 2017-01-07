@@ -1,12 +1,18 @@
 <div class="page">
-    <h2>Search</h2>
-    <input type="text" name="q" (keyup)="exec($event)">
+    <div class="header">
+        <img class="header-logo" src="src/assets/img/logo.png" height="44" width="120" alt="Boogle">
+        <input class="search-input" type="text" name="q" (keyup)="exec($event)">
+    </div>
 
-    <ul class="list">
-        <li class="card" *ngFor="let book of books">
-            <span class="title">{{ book.volumeInfo.title }}</span>
-        </li>
-    </ul>
+    <div class="content">
+        <div class="result-stats" *ngIf="result.totalItems">
+            Aproximadamente {{ result.totalItems }} resultados
+        </div>
 
+        <div class="result-list">
+            <book-card *ngFor="let book of result.items" [data]="book"></book-card>
+        </div>
+    </div>
 </div>
+
 

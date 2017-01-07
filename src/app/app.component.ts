@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 
-
 @Component({
   selector: 'my-app',
-  template: '<search></search>'
+  templateUrl: 'src/app/app.html',
+  styleUrls: ['src/app/app.css']
 })
 export class AppComponent {}
 

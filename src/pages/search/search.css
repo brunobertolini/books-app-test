@@ -1,0 +1,32 @@
+.header {
+    background-color: #FAFAFA;
+    border-bottom: 1px solid #EEE;
+    padding: 15px;
+}
+
+.header-logo {
+    padding: 5px 15px;
+}
+
+.search-input {
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 1.3em;
+    width: 470px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.content {
+    margin-left: 130px;
+    width: 600px;
+}
+
+.result-stats {
+    padding: 10px;
+    color: #808080;
+}
+
+.result-list {
+    padding: 20px;
+}

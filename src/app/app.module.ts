@@ -4,10 +4,11 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent }  from './app.component';
 
-import { HttpService }      from './providers/http';
-import { BooksDataService } from './components/books/data-service';
+import { HttpService }      from './../providers/http';
+import { BooksDataService } from './../components/books/data-service';
+import { BookCardComponent } from './../components/books/card';
 
-import { SearchPage } from './pages/search/search';
+import { SearchPage } from './../pages/search/search';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { SearchPage } from './pages/search/search';
 
   declarations: [
     AppComponent,
+    BookCardComponent,
     SearchPage
   ],
 
@@ -26,6 +28,7 @@ import { SearchPage } from './pages/search/search';
 
   entryComponents: [
     AppComponent,
+    BookCardComponent,
     SearchPage
   ],
 

@@ -1,0 +1,43 @@
+.book {
+    background: #FFF;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+    margin: 0 0 15px;
+    width: 470px;
+}
+
+.book .cover {
+    background: #EEE;
+    border-right: 1px solid #F7F7F7;
+    float: left;
+    height: 150px;
+    width: 110px;
+}
+
+.book .cover img {
+    height: 100%;
+}
+
+.book .details {
+    height: 150px;
+    padding: 10px 10px 10px 120px;
+    position: relative;
+    width: 470px;
+}
+
+.book .title,
+.book .subtitle {
+    margin: 0 15px 0 0;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  // IE 6+, FF 7+, Op 11+, Saf 1.3+, Chr 1+
+    -o-text-overflow: ellipsis;  // for Opera 9 & 10
+    width: 100%;
+}
+
+.book .actions {
+  position: absolute;
+  bottom: 10px;
+}
