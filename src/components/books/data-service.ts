@@ -10,7 +10,7 @@ export class BooksDataService {
     constructor(public http: HttpService) {
     }
 
-    search(term) {
-        return this.http.get(this.path, {q: term});
+    search(options) {
+        return this.http.get(this.path, options);
     }
 }

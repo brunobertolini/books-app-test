@@ -9,24 +9,44 @@ import { BooksDataService } from './../../components/books/data-service';
     styleUrls: ['src/pages/search/search.css']
 })
 export class SearchPage {
-    public result: any = {
-        totalItems: 0
-    };
+    public q: string;
+    public maxResults: number = 10;
+    public startIndex: number = 0;
+    public result: any = {totalItems: 0};
 
     constructor(public dataservice: BooksDataService) {
     }
 
     exec(event) {
+        this.startIndex = 0;
+        this.q = null;
+        this.result = {totalItems: 0};
+
         if (!event.target.value || event.target.value.trim() === '') {
-            return this.result = {
-                totalItems: 0
-            };
+            return;
         }
 
+        this.q = event.target.value;
+        this.load();
+    }
+
+    load() {
+        let options = {
+            q: this.q,
+            startIndex: this.startIndex,
+            maxResults: this.maxResults
+        };
+
         this.dataservice
-            .search(event.target.value)
+            .search(options)
             .then((response) => {
-                this.result = response;
+                if (this.result.totalItems) {
+                    this.result.items = this.result.items.concat(response.items);
+                } else {
+                    this.result = response;
+                }
+
+                this.startIndex += this.maxResults;
             });
     }
 }
