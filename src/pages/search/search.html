@@ -1,0 +1,12 @@
+<div class="page">
+    <h2>Search</h2>
+    <input type="text" name="q" (keyup)="exec($event)">
+
+    <ul class="list">
+        <li class="card" *ngFor="let book of books">
+            <span class="title">{{ book.volumeInfo.title }}</span>
+        </li>
+    </ul>
+
+</div>
+
