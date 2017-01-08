@@ -13,4 +13,8 @@ export class BooksDataService {
     search(options) {
         return this.http.get(this.path, options);
     }
+
+    show(id) {
+        return this.http.get(this.path + '/' + id);
+    }
 }

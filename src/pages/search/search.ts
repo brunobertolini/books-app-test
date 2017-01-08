@@ -4,7 +4,6 @@ import { BooksDataService } from './../../components/books/data-service';
 
 
 @Component({
-    selector: 'search',
     templateUrl: 'src/pages/search/search.html',
     styleUrls: ['src/pages/search/search.css']
 })

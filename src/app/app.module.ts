@@ -11,6 +11,7 @@ import { HttpService }       from './../providers/http';
 import { BooksDataService }  from './../components/books/data-service';
 import { BookCardComponent } from './../components/book-card/card';
 import { SearchPage }        from './../pages/search/search';
+import { BookPage }        from './../pages/book/show';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SearchPage }        from './../pages/search/search';
   declarations: [
     AppComponent,
     BookCardComponent,
-    SearchPage
+    SearchPage,
+    BookPage
   ],
 
   bootstrap: [
@@ -34,7 +36,8 @@ import { SearchPage }        from './../pages/search/search';
   entryComponents: [
     AppComponent,
     BookCardComponent,
-    SearchPage
+    SearchPage,
+    BookPage
   ],
 
   providers: [

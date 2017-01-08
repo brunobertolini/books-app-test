@@ -7,7 +7,7 @@
         <h4 class="title">{{ book.volumeInfo.title }}</h4>
         <small class="subtitle">{{ book.volumeInfo.subtitle }}</small>
         <div class="actions">
-          <button class="btn btn-info">Ver mais</button>
+          <button routerLink="/book/{{ book.id }}" class="btn btn-info">Ver mais</button>
         </div>
     </div>
 </div>

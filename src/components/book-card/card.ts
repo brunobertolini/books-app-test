@@ -11,7 +11,4 @@ export class BookCardComponent {
 
     constructor() {
     }
-
-    details() {
-    }
 }
