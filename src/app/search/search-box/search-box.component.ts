@@ -11,6 +11,7 @@ import { SearchService } from './../search.service';
     styleUrls: ['src/app/search/search-box/search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {
+    private subscription: Subscription;
     public q: string;
 
     constructor(
