@@ -10,7 +10,7 @@ Cogitei desenvolver com Angular 1, framework que tenho bastante experiência, po
 Porém, resolvi fazer com Angular 2, para mostrar como aprendo rápido! :)
 
 Como demorei pra montar o ambiente de build e teste, passei logo para o desenvolvimento. 
-Preferi entregar algo funcionando sem testes, ao invés de testes, sem todas as funcionalidades.
+Preferi entregar todos os casos de uso funcionando sem testes, ao invés de alguns casos com testes.
 
 Como o tempo foi curto, e eu precisei estudar praticamente tudo sobre a biblioteca, nao finalizei todas as etapas.
 
