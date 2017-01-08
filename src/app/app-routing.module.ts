@@ -1,12 +1,16 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SearchPage }        from './../pages/search/search';
-import { BookPage }        from './../pages/book/show';
-
 const appRoutes: Routes = [
-  {path: '', component: SearchPage},
-  {path: 'book/:id', component: BookPage}
+  {
+    path: 'books',
+    loadChildren: 'src/app/books/books.module#BooksModule'
+  },
+  {
+    path: 'search',
+    loadChildren: 'src/app/search/search.module#SearchModule'
+  },
+  { path: '',   redirectTo: '/search', pathMatch: 'full' }
 ];
 
 @NgModule({

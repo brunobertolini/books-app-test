@@ -1,0 +1,14 @@
+<div class="result-stats" *ngIf="result.totalItems">
+    Aproximadamente {{ result.totalItems }} resultados
+</div>
+
+<div class="result-list">
+    <book-card *ngFor="let book of result.items" [data]="book"></book-card>
+
+    <div class="search-results"
+        infinite-scroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="500"
+        (scrolled)="load()">
+    </div>
+</div>

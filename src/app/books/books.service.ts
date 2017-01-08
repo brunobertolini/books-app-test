@@ -1,17 +1,13 @@
 import { Injectable } from '@angular/core';
 
-import { HttpService } from './../../providers/http';
+import { HttpService } from './../shared/http.service';
 
 
 @Injectable()
-export class BooksDataService {
+export class BooksService {
     path: String = '/volumes';
 
     constructor(public http: HttpService) {
-    }
-
-    search(options) {
-        return this.http.get(this.path, options);
     }
 
     show(id) {

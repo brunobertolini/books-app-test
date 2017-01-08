@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
+
 @Component({
     selector: 'book-card',
-    templateUrl: 'src/components/book-card/card.html',
-    styleUrls: ['src/components/book-card/card.css'],
+    templateUrl: 'src/app/books/card/book-card.component.html',
+    styleUrls: ['src/app/books/card/book-card.component.css'],
     inputs: ['book:data']
 })
 export class BookCardComponent {

@@ -1,32 +1,22 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule }    from '@angular/http';
-
-import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
 import { AppComponent }      from './app.component';
-import { AppRoutingModule }      from './app.routing';
+import { AppRoutingModule }  from './app-routing.module';
 
-import { HttpService }       from './../providers/http';
-import { BooksDataService }  from './../components/books/data-service';
-import { BookCardComponent } from './../components/book-card/card';
-import { SearchPage }        from './../pages/search/search';
-import { BookPage }        from './../pages/book/show';
-
+import { SearchModule }  from './search/search.module';
+import { BooksModule }  from './books/books.module';
 
 @NgModule({
+
   imports: [
-    BrowserModule,
-    HttpModule,
-    InfiniteScrollModule,
+    SearchModule,
+    BooksModule,
     AppRoutingModule
   ],
 
   declarations: [
-    AppComponent,
-    BookCardComponent,
-    SearchPage,
-    BookPage
+    AppComponent
   ],
 
   bootstrap: [
@@ -34,15 +24,11 @@ import { BookPage }        from './../pages/book/show';
   ],
 
   entryComponents: [
-    AppComponent,
-    BookCardComponent,
-    SearchPage,
-    BookPage
+    AppComponent
   ],
 
   providers: [
-    HttpService,
-    BooksDataService
   ]
+
 })
 export class AppModule { }
