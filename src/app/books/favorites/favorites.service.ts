@@ -31,6 +31,7 @@ export class FavoritesService {
         let books = this.books.filter((item) => item.id === book.id);
         return books.length;
     }
+
     remove(book) {
         let index = this.books.findIndex((item) => item.id === book.id);
 

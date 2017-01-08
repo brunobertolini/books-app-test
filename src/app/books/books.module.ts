@@ -10,6 +10,7 @@ import { FavoritesService } from './favorites/favorites.service';
 
 import { BookCardComponent } from './card/book-card.component';
 import { BookDetailsComponent } from './details/book-details.component';
+import { FavoritesComponent }  from './favorites/favorites.component';
 
 @NgModule({
 
@@ -21,17 +22,20 @@ import { BookDetailsComponent } from './details/book-details.component';
 
   declarations: [
     BookCardComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    FavoritesComponent
   ],
 
   entryComponents: [
     BookCardComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    FavoritesComponent
   ],
 
   exports: [
     BookCardComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    FavoritesComponent
   ],
 
   providers: [

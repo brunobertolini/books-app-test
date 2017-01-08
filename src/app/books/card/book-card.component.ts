@@ -14,8 +14,8 @@ import { FavoritesService } from './../favorites/favorites.service';
 })
 export class BookCardComponent implements OnInit {
     public book: any;
-    public term: any;
     public favorite: boolean = false;
+    public term: any = '';
 
     constructor(
         private favorites: FavoritesService
