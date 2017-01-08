@@ -29,6 +29,8 @@ npm run dev
 make run
 ```
 
+Open `http://localhost:3000`
+
 ## TODO
 
 - [ ] Build to run index.html only
