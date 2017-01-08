@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { BooksService } from './../books.service';
+import { FavoritesService } from './../favorites/favorites.service';
+
 
 @Component({
     templateUrl: 'src/app/books/details/book-details.component.html',
@@ -11,10 +13,12 @@ import { BooksService } from './../books.service';
 export class BookDetailsComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
     public book: any;
+    public favorite: boolean = false;
 
     constructor(
         private route: ActivatedRoute,
-        private service: BooksService
+        private service: BooksService,
+        private favorites: FavoritesService
     ) {
     }
 
@@ -34,6 +38,18 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
     load(id) {
         this.service
             .show(id)
-            .then((book: any) => this.book = book);
+            .then((book: any) => {
+                this.book = book;
+                this.favorite = this.favorites.exists(this.book);
+            });
+    }
+
+
+    favoriteToggle() {
+        this.favorite = !this.favorite;
+
+        (this.favorite)
+            ? this.favorites.set(this.book)
+            : this.favorites.remove(this.book);
     }
 }

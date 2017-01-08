@@ -12,17 +12,17 @@
     </div>
 
     <div class="badges clearfix">
-        <div class="badge-info">
+        <div class="badge-info" *ngIf="book.volumeInfo.pageCount">
             <span class="value">{{ book.volumeInfo.pageCount }}</span>
             <span class="name">páginas</span>
         </div>
 
-        <div class="badge-info">
+        <div class="badge-info" *ngIf="book.volumeInfo.ratingsCount">
             <span class="value">{{ book.volumeInfo.ratingsCount }}</span>
             <span class="name">votos</span>
         </div>
 
-        <div class="badge-info">
+        <div class="badge-info" *ngIf="book.volumeInfo.averageRating">
             <span class="value">{{ book.volumeInfo.averageRating }}</span>
             <span class="name">estrelas</span>
         </div>
