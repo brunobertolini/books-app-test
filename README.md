@@ -36,6 +36,7 @@ Open [http://localhost:3000](http://localhost:3000)
 - [ ] Build to run index.html only
 - [ ] Configure tests runner
 - [ ] Create Test Specs
+- [ ] Code coverage
 - [ ] Automated Build
 - [ ] Create Home Page (serach)
 - [ ] Improve desgin
