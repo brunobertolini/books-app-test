@@ -3,8 +3,6 @@
 }
 
 .book .cover {
-    background: #EEE;
-    border-right: 1px solid #F7F7F7;
     float: left;
     height: 150px;
     width: 110px;
