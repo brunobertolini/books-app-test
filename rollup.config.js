@@ -1,4 +1,5 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 
 class RollupNG2 {
   constructor(options){
@@ -21,7 +22,8 @@ export default {
     rollupNG2(),
     nodeResolve({
       jsnext: true, main: true
-    })
+    }),
+    commonjs()
   ]
 }
 

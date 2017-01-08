@@ -21,6 +21,9 @@
 /coverage/*
 npm-debug.log
 /typings
+.com.google*
+karma*
+
 
 #System Files
 .DS_Store
