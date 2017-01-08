@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { BooksService } from './../books.service';
@@ -9,6 +9,7 @@ import { BooksService } from './../books.service';
     styleUrls: ['src/app/books/details/book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit, OnDestroy {
+    private subscription: Subscription;
     public book: any;
 
     constructor(
@@ -19,7 +20,7 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.subscription = this.route.params
-            .subscribe((param: Params) => {
+            .subscribe((param: any) => {
                 if (param.id && param.id !== '') {
                     this.load(param.id);
                 }

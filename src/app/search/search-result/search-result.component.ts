@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { SearchService } from './../search.service';
@@ -26,7 +26,7 @@ export class SearchResultComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.subscription = this.route.queryParams
-            .subscribe((param: Params) => {
+            .subscribe((param: any) => {
                 if (param.q && param.q !== '') {
                     this.load(param.q);
                 }
