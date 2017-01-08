@@ -6,6 +6,8 @@ import { SharedModule }  from './../shared/shared.module';
 import { BooksService }   from './books.service';
 import { BooksRoutingModule }   from './books-routing.module';
 
+import { FavoritesService } from './favorites/favorites.service';
+
 import { BookCardComponent } from './card/book-card.component';
 import { BookDetailsComponent } from './details/book-details.component';
 
@@ -33,7 +35,8 @@ import { BookDetailsComponent } from './details/book-details.component';
   ],
 
   providers: [
-    BooksService
+    BooksService,
+    FavoritesService
   ]
 
 })

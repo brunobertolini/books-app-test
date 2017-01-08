@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { FavoritesService } from './../favorites/favorites.service';
 
 
 @Component({
@@ -7,9 +9,24 @@ import { Component } from '@angular/core';
     styleUrls: ['src/app/books/card/book-card.component.css'],
     inputs: ['book:data']
 })
-export class BookCardComponent {
+export class BookCardComponent implements OnInit {
     public book: any;
+    public favorite: boolean = false;
 
-    constructor() {
+    constructor(
+        private favorites: FavoritesService
+    ) {
+    }
+
+    ngOnInit() {
+        this.favorite = this.favorites.exists(this.book);
+    }
+
+    favoriteToggle() {
+        this.favorite = !this.favorite;
+
+        (this.favorite)
+            ? this.favorites.set(this.book)
+            : this.favorites.remove(this.book);
     }
 }
