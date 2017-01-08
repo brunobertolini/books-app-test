@@ -1,9 +1,9 @@
 <div class="result-stats" *ngIf="result.totalItems">
-    Aproximadamente {{ result.totalItems }} resultados
+    Aproximadamente {{ result.totalItems }}
 </div>
 
 <div class="result-list">
-    <book-card *ngFor="let book of result.items" [data]="book"></book-card>
+    <book-card *ngFor="let book of result.items" [data]="book" [highlight]="q"></book-card>
 
     <div class="search-results"
         infinite-scroll

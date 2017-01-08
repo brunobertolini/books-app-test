@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { HttpModule }    from '@angular/http';
 
 import { HttpService }   from './http.service';
-
+import { HighlightPipe } from './highlight.pipe';
 
 @NgModule({
 
@@ -11,6 +11,11 @@ import { HttpService }   from './http.service';
   ],
 
   declarations: [
+    HighlightPipe
+  ],
+
+  exports: [
+    HighlightPipe
   ],
 
   providers: [

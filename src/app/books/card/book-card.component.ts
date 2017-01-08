@@ -7,10 +7,14 @@ import { FavoritesService } from './../favorites/favorites.service';
     selector: 'book-card',
     templateUrl: 'src/app/books/card/book-card.component.html',
     styleUrls: ['src/app/books/card/book-card.component.css'],
-    inputs: ['book:data']
+    inputs: [
+        'book:data',
+        'term:highlight'
+    ]
 })
 export class BookCardComponent implements OnInit {
     public book: any;
+    public term: any;
     public favorite: boolean = false;
 
     constructor(

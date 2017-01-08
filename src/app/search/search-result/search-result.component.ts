@@ -7,8 +7,8 @@ import { SearchService } from './../search.service';
 
 @Component({
     selector: 'search-result',
-    templateUrl: 'src/app/search/search-result/search-result.component.html'
-    // styleUrls: ['src/app/search/search-result/search-result.component.css']
+    templateUrl: 'src/app/search/search-result/search-result.component.html',
+    styleUrls: ['src/app/search/search-result/search-result.component.css']
 })
 export class SearchResultComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
@@ -28,6 +28,7 @@ export class SearchResultComponent implements OnInit, OnDestroy {
         this.subscription = this.route.queryParams
             .subscribe((param: any) => {
                 if (param.q && param.q !== '') {
+                    this.q = param.q;
                     this.load(param.q);
                 }
             });

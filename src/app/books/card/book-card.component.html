@@ -4,8 +4,8 @@
     </div>
     <div class="details">
         <i class="pull-right glyphicon" [ngClass]="favorite ? 'glyphicon-star' : 'glyphicon-star-empty'" (click)="favoriteToggle()"></i>
-        <h4 class="title">{{ book.volumeInfo.title }}</h4>
-        <small class="subtitle">{{ book.volumeInfo.subtitle }}</small>
+        <h4 class="title" [innerHTML]="book.volumeInfo.title | highlight: term"></h4>
+        <small class="subtitle" [innerHTML]="book.volumeInfo.subtitle"></small>
         <div class="actions">
           <button routerLink="/books/{{ book.id }}" class="btn btn-info">Ver mais</button>
         </div>
