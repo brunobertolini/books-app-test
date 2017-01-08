@@ -1,6 +1,6 @@
 {
   "name": "rd-books-app",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "RD Books app",
   "scripts": {
     "postinstall": "npm run typings",
