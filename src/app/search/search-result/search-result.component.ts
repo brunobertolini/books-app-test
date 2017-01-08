@@ -14,19 +14,22 @@ export class SearchResultComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
 
     public q: string;
-    public maxResults: number = 10;
-    public startIndex: number = 0;
-    public result: any = {totalItems: 0};
+    public result: any;
+    public maxResults: number;
+    public startIndex: number;
 
     constructor(
         private route: ActivatedRoute,
         private service: SearchService
     ) {
+        this.reset();
     }
 
     ngOnInit() {
         this.subscription = this.route.queryParams
             .subscribe((param: any) => {
+                this.reset();
+
                 if (param.q && param.q !== '') {
                     this.q = param.q;
                     this.load(param.q);
@@ -36,6 +39,13 @@ export class SearchResultComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.subscription.unsubscribe();
+    }
+
+    reset() {
+        this.result = {totalItems: 0};
+        this.maxResults = 10;
+        this.startIndex = 0;
+        this.q = null;
     }
 
     load(term) {
