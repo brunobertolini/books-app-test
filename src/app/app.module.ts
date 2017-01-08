@@ -5,16 +5,20 @@ import { HttpModule }    from '@angular/http';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
 import { AppComponent }      from './app.component';
+import { AppRoutingModule }      from './app.routing';
+
 import { HttpService }       from './../providers/http';
 import { BooksDataService }  from './../components/books/data-service';
 import { BookCardComponent } from './../components/book-card/card';
 import { SearchPage }        from './../pages/search/search';
 
+
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    AppRoutingModule
   ],
 
   declarations: [
