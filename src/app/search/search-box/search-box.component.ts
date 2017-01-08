@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { SearchService } from './../search.service';
 
@@ -9,12 +10,27 @@ import { SearchService } from './../search.service';
     templateUrl: 'src/app/search/search-box/search-box.component.html',
     styleUrls: ['src/app/search/search-box/search-box.component.css']
 })
-export class SearchBoxComponent {
+export class SearchBoxComponent implements OnInit, OnDestroy {
+    public q: string;
 
     constructor(
         private router: Router,
+        private route: ActivatedRoute,
         public service: SearchService
     ) {
+    }
+
+    ngOnInit() {
+        this.subscription = this.route.queryParams
+            .subscribe((param: any) => {
+                if (param.q && param.q !== '') {
+                    this.q = param.q;
+                }
+            });
+    }
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 
     exec(event) {

@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
 
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
@@ -17,6 +18,7 @@ import { SearchResultComponent }   from './search-result/search-result.component
 
   imports: [
     BrowserModule,
+    FormsModule,
     InfiniteScrollModule,
     SharedModule,
     BooksModule,
