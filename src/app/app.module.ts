@@ -1,4 +1,4 @@
-import { NgModule }      from '@angular/core';
+import { NgModule, LOCALE_ID }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }      from './app.component';
@@ -28,6 +28,7 @@ import { BooksModule }  from './books/books.module';
   ],
 
   providers: [
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
   ]
 
 })

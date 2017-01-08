@@ -1,0 +1,60 @@
+.book {
+    padding: 15px 0;
+}
+
+.book .cover {
+    background: #EEE;
+    border-right: 1px solid #F7F7F7;
+    float: left;
+    height: 150px;
+    width: 110px;
+}
+
+.book .cover img {
+    height: 100%;
+}
+
+.book .details {
+    height: 150px;
+    padding: 10px 10px 10px 120px;
+    position: relative;
+}
+
+.book .title {
+    margin: 0 15px 0 0;
+}
+
+.book .authors {
+    display: block;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.book .publisher {
+    display: block;
+}
+
+//
+.book {}
+
+.book .badges {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.book .badge-info {
+    background-color: #FAFAFA;
+    border-radius: 2px;
+    margin-left: 1px;
+    float: left;
+    padding: 15px;
+    width: 120px;
+}
+
+.book .badge-info .value {
+    font-size: 2em;
+}
+
+.book .badge-info .name {
+    display: block;
+}

@@ -1,5 +1,35 @@
 <div class="book" *ngIf="book">
-    <h2>{{ book.volumeInfo.title }}</h2>
+    <div class="cover">
+        <img *ngIf="book.volumeInfo.imageLinks" src="{{ book.volumeInfo.imageLinks.thumbnail }}">
+    </div>
+
+    <div class="details">
+        <i class="pull-right glyphicon" [ngClass]="favorite ? 'glyphicon-star' : 'glyphicon-star-empty'" (click)="favoriteToggle()"></i>
+        <h3 class="title">{{ book.volumeInfo.title }}: {{ book.volumeInfo.subtitle }}</h3>
+        <span class="authors">{{ book.volumeInfo.authors.join(', ') }}</span>
+        <span class="publisher">{{ book.volumeInfo.publisher }}</span>
+        <span class="publishedDate">{{ book.volumeInfo.publishedDate | date }}</span>
+    </div>
+
+    <div class="badges clearfix">
+        <div class="badge-info">
+            <span class="value">{{ book.volumeInfo.pageCount }}</span>
+            <span class="name">páginas</span>
+        </div>
+
+        <div class="badge-info">
+            <span class="value">{{ book.volumeInfo.ratingsCount }}</span>
+            <span class="name">votos</span>
+        </div>
+
+        <div class="badge-info">
+            <span class="value">{{ book.volumeInfo.averageRating }}</span>
+            <span class="name">estrelas</span>
+        </div>
+    </div>
+
+    <div class="seection">
+        <h4>Descrição</h4>
+        <p class="description">{{ book.volumeInfo.description }}</p>
+    </div>
 </div>
-
-
